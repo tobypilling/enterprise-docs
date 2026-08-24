@@ -30,6 +30,19 @@ Thunderbird's chat component allows the user to access different types of instan
   - Default: true
   - Default Action: Enables access to the Instant Messaging user interface in Thunderbird
 
+### Community Features <a id="Community_Features"></a>
+
+Thunderbird includes links and settings that connect users with Thunderbird community, donation, feedback and service resources.
+
+- **mail.community_settings.enabled**
+  - Default: true
+  - Default Action: Displays community-focused settings, links and commands in Thunderbird.
+  - Notes:
+    - Set this preference to `false` to hide community-focused user interface elements.
+    - These elements include Start Page settings; Get Involved, Make a Donation, and Share Ideas and Feedback commands; Sign in to Thundermail; and the donation link in Account Hub.
+    - Enterprise administrators should normally use the `DisableCommunityFeatures` enterprise policy rather than setting this preference directly.
+    - The enterprise policy also disables the Thunderbird Start Page.
+
 ### Data Collection Settings <a id="Data_Collection_Settings"></a>
 
 Thunderbird includes settings that allow users to control the collection of technical and interaction data.
@@ -66,7 +79,7 @@ Export for Mobile allows users to transfer compatible Thunderbird account settin
 
 Thunderbird may provide experimental features that users can enable from Settings. The available experimental features can vary between Thunderbird versions and release channels.
 
-- **mail.offer_experimental_features**
+- **mail.experimental_features_settings.enabled**
   - Default: true
   - Default Action: Displays available experimental feature controls in Thunderbird's Settings.
   - Notes:
