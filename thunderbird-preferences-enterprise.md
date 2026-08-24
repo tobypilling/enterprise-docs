@@ -30,6 +30,19 @@ Thunderbird's chat component allows the user to access different types of instan
   - Default: true
   - Default Action: Enables access to the Instant Messaging user interface in Thunderbird
 
+### Data Collection Settings <a id="Data_Collection_Settings"></a>
+
+Thunderbird includes settings that allow users to control the collection of technical and interaction data.
+
+- **mail.data_collection_settings.enabled**
+  - Default: true
+  - Default Action: Displays the Data Collection and Use section in Thunderbird's Privacy & Security settings.
+  - Notes:
+    - Set this preference to `false` to hide the Data Collection and Use settings from users.
+    - This preference only controls access to the settings interface. It does not disable telemetry or change the underlying data collection preferences.
+    - Enterprise administrators should normally use the `DisableDataCollectionSettings` enterprise policy rather than setting this preference directly.
+    - Data collection behaviour should be managed separately using the appropriate policies, such as `DisableTelemetry`.
+
 ### Export for Mobile <a id="Export_for_Mobile"></a>
 
 Export for Mobile allows users to transfer compatible Thunderbird account settings to Thunderbird for Android by scanning one or more QR codes. Depending on the available options and the user's selection, account passwords may also be included.
@@ -48,6 +61,18 @@ Export for Mobile allows users to transfer compatible Thunderbird account settin
     - When set to `true`, the option to include passwords in Export for Mobile is unavailable.
     - This preference affects password access elsewhere in Thunderbird as well; it is not specific to Export for Mobile.
     - Enterprise administrators should normally use the `DisablePasswordReveal` enterprise policy rather than setting this preference directly.
+
+### Experimental Features <a id="Experimental_Features"></a>
+
+Thunderbird may provide experimental features that users can enable from Settings. The available experimental features can vary between Thunderbird versions and release channels.
+
+- **mail.offer_experimental_features**
+  - Default: true
+  - Default Action: Displays available experimental feature controls in Thunderbird's Settings.
+  - Notes:
+    - Set this preference to `false` to hide experimental feature controls from users.
+    - This preference controls the visibility of experimental options. It does not necessarily reset experimental features that were previously enabled through their individual preferences.
+    - Enterprise administrators should normally use the `DisableExperimentalFeatures` enterprise policy rather than setting this preference directly.
 
 ### In-App Notifications <a id="In-App_Notifications"></a>
 
@@ -73,6 +98,19 @@ Thunderbird can display in-app notifications including product announcements, su
   - Setting `mail.inappnotifications.enabled` to `false` disables all in-app notifications.
   - The individual `*_enabled` preferences can be used to selectively enable or disable specific notification categories.
   - Enterprise administrators should normally use the `InAppNotification` enterprise policy rather than setting these preferences directly.
+
+### Message Filter Forwarding <a id="Message_Filter_Forwarding"></a>
+
+Thunderbird message filters can automatically forward matching messages to a specified email address.
+
+- **mail.filters.forward.enabled**
+  - Default: true
+  - Default Action: Allows users to create message filters that automatically forward messages and allows forwarding actions in existing filters to run.
+  - Notes:
+    - Set this preference to `false` to remove the Forward action from the message filter editor and prevent forwarding actions in existing filters from running.
+    - Other actions after a blocked forwarding action in the same filter continue to run.
+    - This preference does not disable manually forwarding messages.
+    - Enterprise administrators should normally use the `DisableMessageForwardingFilters` enterprise policy rather than setting this preference directly.
 
 ### Offline Download / Synchronisation <a id="HTML"></a>
 
@@ -115,6 +153,19 @@ By default all HTML elements are interpreted by the Thunderbird HTML parser. For
   - Default Action: Drop non-CSS presentational HTML elements and attributes, such as &lt;font&gt;, &lt;center&gt; and _bgcolor._
   - Notes:
     - Only applies to messages viewed as Simple HTML \(mailnews.display.html_as = 3, see above\).
+
+### Application Update Settings <a id="Application_Update_Settings"></a>
+
+Thunderbird's application update settings allow users to view and configure update behaviour.
+
+- **mail.update_settings.enabled**
+  - Default: true
+  - Default Action: Displays the application update section in Thunderbird's General settings.
+  - Notes:
+    - Set this preference to `false` to hide the application update settings from users.
+    - This preference only controls access to the settings interface. It does not disable application updates.
+    - Update behaviour continues to be determined by the applicable update policies and deployment configuration.
+    - Enterprise administrators should normally use the `DisableUpdateSettings` enterprise policy rather than setting this preference directly.
 
 ### Version Upgrades <a id="Version_Upgrades"></a>
 
